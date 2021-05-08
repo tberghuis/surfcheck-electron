@@ -1,0 +1,22 @@
+dev building instructions
+
+dev vue standalone
+vue build static files
+integrate with electron
+
+scripts to generate js fron beach name csv
+
+so do i need to modify headers for surfline???
+
+merge vue tmp into project
+
+hls.js hello world
+
+css sizing of the video component,
+hardcode width, when finished make responsive
+
+
+###############
+to build, npm run build
+
+.\node_modules\.bin\electron-packager .
