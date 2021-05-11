@@ -20,3 +20,5 @@ hardcode width, when finished make responsive
 to build, npm run build
 
 .\node_modules\.bin\electron-packager .
+
+./node_modules/.bin/electron-packager .

@@ -1,3 +1,4 @@
 /node_modules
 /surfcheck-electron-win32-x64
+/surfcheck-electron-linux-x64
 /dist
