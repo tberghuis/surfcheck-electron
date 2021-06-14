@@ -19,6 +19,9 @@ hardcode width, when finished make responsive
 ###############
 to build, npm run build
 
+### windows
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 .\node_modules\.bin\electron-packager .
 
+### linux
 ./node_modules/.bin/electron-packager . --overwrite
