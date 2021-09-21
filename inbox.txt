@@ -21,7 +21,7 @@ to build, npm run build
 
 ### windows
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-.\node_modules\.bin\electron-packager .
+.\node_modules\.bin\electron-packager . --overwrite
 
 ### linux
 ./node_modules/.bin/electron-packager . --overwrite
