@@ -5,29 +5,23 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "package": "electron-packager . --overwrite"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "core-js": "^3.6.5",
-    "hls.js": "^1.0.2",
-    "vue": "^3.0.0"
+    "hls.js": "^1.0.10",
+    "vue": "^3.2.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "babel-eslint": "^10.1.0",
+    "@vitejs/plugin-vue": "^1.6.1",
+    "@vue/compiler-sfc": "^3.2.6",
+    "vite": "^2.5.4",
     "electron": "^12.0.6",
     "electron-builder": "^22.11.1",
-    "electron-packager": "^15.2.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.0.0",
-    "prettier": "^2.2.1"
+    "electron-packager": "^15.2.0"
   }
 }

@@ -1,35 +1,43 @@
 <template>
-  <div>
-    surfcam {{camUrl}}
-    <video ref="video" muted="muted"></video>
-  </div>
+  <video ref="video" muted="muted"></video>
 </template>
 
 <script>
-
-// todo use composition api instead of mounted hooks
-
 import Hls from "hls.js";
+import { ref, onMounted, watchEffect } from "vue";
 
 export default {
   name: "Surfcam",
   props: {
-    camUrl: String
+    camUrl: String,
   },
-  mounted: function() {
-    var video = this.$refs.video;
+  setup(props) {
+    const video = ref(null);
+    watchEffect(() => {
+      if (video.value === null) {
+        return;
+      }
 
-    if (Hls.isSupported()) {
+      console.log("camUrl", props.camUrl);
+      console.log("video", video.value);
+      // should I only use one instance???
       var hls = new Hls();
-      hls.loadSource(this.camUrl);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, function() {
-        video.play();
+      hls.on(Hls.Events.MANIFEST_PARSED, function () {
+        video.value.play();
       });
-    }
-  }
+      hls.loadSource(props.camUrl);
+      hls.attachMedia(video.value);
+    });
+
+    return {
+      video,
+    };
+  },
 };
 </script>
 
 <style>
+video {
+  width: 100%;
+}
 </style>
