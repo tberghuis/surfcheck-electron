@@ -17,12 +17,19 @@ const toggleCam = () => {
 </script>
 
 <template>
-  <div>hello</div>
-  <button @click="toggleCam">toggle cam</button>
-  <Surfcam :camUrl="camUrls[camIndex]" />
+  <div>
+    <div>hello</div>
+    <button @click="toggleCam">toggle cam</button>
+  </div>
+  <div>
+    <Surfcam :camUrl="camUrls[camIndex]" />
+  </div>
 </template>
 
 <style>
 #app {
+  display: flex;
+  /* max-width: 100vw; */
 }
+
 </style>
