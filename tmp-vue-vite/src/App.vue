@@ -1,21 +1,28 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Surfcam from "./components/Surfcam.vue";
+import { ref, onMounted, watch } from "vue";
+
+const camUrls = [
+  "https://cams.cdn-surfline.com/cdn-au/au-lennoxhead/playlist.m3u8",
+  "https://cams.cdn-surfline.com/cdn-au/au-ballinalighthouse/chunklist.m3u8",
+];
+
+const camIndex = ref(0);
+
+const toggleCam = () => {
+  camIndex.value++;
+  console.log("camIndex", camIndex.value);
+  camIndex.value = camIndex.value % 2;
+};
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div>hello</div>
+  <button @click="toggleCam">toggle cam</button>
+  <Surfcam :camUrl="camUrls[camIndex]" />
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
