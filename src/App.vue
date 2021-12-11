@@ -1,36 +1,23 @@
 <script setup>
 import Surfcam from "./components/Surfcam.vue";
 import { ref, onMounted, watch } from "vue";
+import { cams } from "./cams.js";
 
-const camUrls = [
-  "https://cams.cdn-surfline.com/cdn-au/au-byronbay/playlist.m3u8",
-  "https://cams.cdn-surfline.com/cdn-au/au-thepassoverview/playlist.m3u8",
-  "https://cams.cdn-surfline.com/cdn-au/au-lennoxhead/playlist.m3u8",
-  "https://cams.cdn-surfline.com/cdn-au/au-ballinashellybeach/playlist.m3u8",
-  "https://cams.cdn-surfline.com/cdn-au/au-ballinalighthouse/chunklist.m3u8",
-  "https://cams.cdn-surfline.com/cdn-au/au-evanshead/playlist.m3u8",
-];
-
-const camIndex = ref(0);
-
-const toggleCam = (index) => {
-  // camIndex.value++;
-  // console.log("camIndex", camIndex.value);
-  // camIndex.value = camIndex.value % 2;
-};
+const camIndex = ref(26);
 </script>
 
 <template>
   <div class="cam-list">
-    <button @click="camIndex = 0">the wreck</button>
-    <button @click="camIndex = 1">the pass</button>
-    <button @click="camIndex = 2">lennox</button>
-    <button @click="camIndex = 3">shelly</button>
-    <button @click="camIndex = 4">northwall</button>
-    <button @click="camIndex = 5">evans</button>
+    <button
+      v-for="(cam, index) in cams"
+      :key="cam.name"
+      @click="camIndex = index"
+    >
+      {{ cam.name }}
+    </button>
   </div>
   <div class="cam-container">
-    <Surfcam :camUrl="camUrls[camIndex]" />
+    <Surfcam :camUrl="cams[camIndex].url" />
   </div>
 </template>
 

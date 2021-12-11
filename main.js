@@ -12,10 +12,10 @@ function createWindow() {
 
   // todo env var dev or prod build
 
-  // mainWindow.loadURL('http://localhost:8080/');
+  // mainWindow.loadURL('http://localhost:3000/');
 
   mainWindow.loadFile("dist/index.html");
-  // mainWindow.loadURL(`file://${__dirname}/dist/index.html`);
+  // file://${__dirname}/dist/index.html
 }
 
 app.whenReady().then(() => {
