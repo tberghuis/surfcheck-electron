@@ -4,6 +4,9 @@ dev vue standalone
 vue build static files
 integrate with electron
 
+in future, have vue src in seperate folder from electron
+TODO main.js env==production use index.html from dist/
+
 ###############
 to build, npm run build
 
