@@ -28,6 +28,14 @@ export const cams = [
     url: "https://cams.cdn-surfline.com/cdn-au/au-kurrawa/playlist.m3u8",
   },
   {
+    name: "burleighheads overview",
+    url: "https://cams.cdn-surfline.com/cdn-au/au-burleighheadsov/playlist.m3u8",
+  },
+  {
+    name: "burleighheads",
+    url: "https://cams.cdn-surfline.com/cdn-au/au-burleighheads/playlist.m3u8",
+  },
+  {
     name: "palmbeachqld",
     url: "https://cams.cdn-surfline.com/cdn-au/au-palmbeachqld/playlist.m3u8",
   },
