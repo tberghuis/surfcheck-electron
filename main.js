@@ -10,11 +10,11 @@ function createWindow() {
     },
   });
 
-  // todo env var dev or prod build
-
-  // mainWindow.loadURL('http://localhost:3000/');
-
-  mainWindow.loadFile("dist/index.html");
+  if (app.isPackaged) {
+    mainWindow.loadFile("dist/index.html");
+  } else {
+    mainWindow.loadURL('http://localhost:3000/');
+  }
   // file://${__dirname}/dist/index.html
 }
 
